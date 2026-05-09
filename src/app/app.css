@@ -1,0 +1,48 @@
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.carte {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.carte img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.titre {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.info {
+  font-size: 11px;
+  color: #666;
+  margin: 2px 0;
+}

@@ -1,0 +1,34 @@
+<h1>🎬 Mes Films</h1>
+
+<div class="filtres">
+  <input
+    type="text"
+    [(ngModel)]="recherche"
+    placeholder="Rechercher un film..."
+  />
+
+  <select [(ngModel)]="boiteSelectionnee">
+    <option [ngValue]="null">Toutes les boites</option>
+    @for (boite of boites; track boite) {
+      <option [ngValue]="boite">Boite {{ boite }}</option>
+    }
+  </select>
+</div>
+
+<hr>
+
+<div class="grille">
+  @for (film of filmsFiltres(); track film._id) {
+    <div class="carte" (click)="voirDetail(film._id)">
+      <img
+        [src]="'http://localhost:3000/images/' + film.asset.toLowerCase() + '.jpg'"
+        alt="{{ film.titre }}"
+      />
+      <p class="titre">{{ film.titre }}</p>
+      <p class="info">📦 Boite : {{ film.boite }}</p>
+      <p class="info">🏷️ Asset : {{ film.asset }}</p>
+    </div>
+  } @empty {
+    <p>Aucun film trouvé.</p>
+  }
+</div>
