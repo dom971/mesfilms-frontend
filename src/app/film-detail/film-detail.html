@@ -2,7 +2,7 @@
   <div class="detail">
     <button (click)="retour()">⬅️ Retour</button>
     <img
-      [src]="'https://mesfilms-backend.onrender.com/images/' + film.asset.toLowerCase() + '.jpg'"
+      [src]="'https://mesfilms-backend.onrender.com/images/' + film.asset + '.jpg'"
       alt="{{ film.titre }}"
     />
     <h2>{{ film.titre }}</h2>
