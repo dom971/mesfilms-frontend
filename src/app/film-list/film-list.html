@@ -21,7 +21,7 @@
   @for (film of filmsFiltres(); track film._id) {
     <div class="carte" (click)="voirDetail(film._id)">
       <img
-        [src]="'http://localhost:3000/images/' + film.asset.toLowerCase() + '.jpg'"
+        [src]="'https://mesfilms-backend.onrender.com/images/' + film.asset.toLowerCase() + '.jpg'"
         alt="{{ film.titre }}"
       />
       <p class="titre">{{ film.titre }}</p>
