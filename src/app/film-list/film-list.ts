@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FilmService } from '../services/film.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-film-list',
@@ -21,7 +22,8 @@ export class FilmListComponent {
   constructor(
     private filmService: FilmService,
     private cdr: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.loadFilms();
     this.loadBoites();
@@ -47,15 +49,19 @@ export class FilmListComponent {
     });
   }
 
-filmsFiltres() {
-  return this.films.filter(f => {
-    const matchTitre = f.titre.toLowerCase().includes(this.recherche.toLowerCase());
-    const matchBoite = !this.boiteSelectionnee || f.boite === Number(this.boiteSelectionnee);
-    return matchTitre && matchBoite;
-  });
-}
+  filmsFiltres() {
+    return this.films.filter(f => {
+      const matchTitre = f.titre.toLowerCase().includes(this.recherche.toLowerCase());
+      const matchBoite = !this.boiteSelectionnee || f.boite === Number(this.boiteSelectionnee);
+      return matchTitre && matchBoite;
+    });
+  }
 
   voirDetail(id: string) {
     this.router.navigate(['/film', id]);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
