@@ -18,8 +18,6 @@
   </select>
 </div>
 
-<hr>
-
 <div class="grille">
   @for (film of filmsFiltres(); track film._id) {
     <div class="carte" (click)="voirDetail(film._id)">

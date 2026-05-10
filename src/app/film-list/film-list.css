@@ -15,10 +15,9 @@ body {
   top: 0;
   z-index: 100;
   background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
-  padding: 30px 20px 20px;
+  padding: 20px;
   text-align: center;
   border-bottom: 2px solid #e50914;
-  margin-bottom: 10px;
 }
 
 h1 {
