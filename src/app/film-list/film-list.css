@@ -42,12 +42,16 @@ h1 span {
 }
 
 .filtres {
+  position: sticky;
+  top: 105px; /* ajustez selon la hauteur de votre en-tête */
+  z-index: 99;
+  background-color: #141414;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 10px;
 }
 
 input {
