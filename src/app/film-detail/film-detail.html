@@ -1,15 +1,19 @@
 @if (film) {
   <div class="detail">
-    <button (click)="retour()">⬅️ Retour</button>
-    <img
-      [src]="'https://mesfilms-backend.onrender.com/images/' + film.asset.toLowerCase() + '.jpg'"
-      alt="{{ film.titre }}"
-    />
-    <h2>{{ film.titre }}</h2>
-    <p>📦 Boite : {{ film.boite }}</p>
-    <p>🏷️ Asset : {{ film.asset }}</p>
-    <p>🔢 UPC : {{ film.upc }}</p>
+    <button class="btn-retour" (click)="retour()">⬅️ Retour</button>
+    <div class="poster">
+      <img
+        [src]="'https://mesfilms-backend.onrender.com/images/' + film.asset.toLowerCase() + '.jpg'"
+        alt="{{ film.titre }}"
+      />
+    </div>
+    <div class="infos">
+      <h2>{{ film.titre }}</h2>
+      <p>📦 Boite : {{ film.boite }}</p>
+      <p>🏷️ Asset : {{ film.asset }}</p>
+      <p>🔢 UPC : {{ film.upc }}</p>
+    </div>
   </div>
 } @else {
-  <p>Chargement...</p>
+  <p class="chargement">Chargement...</p>
 }
