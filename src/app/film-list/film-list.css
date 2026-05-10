@@ -41,7 +41,7 @@ h1 span {
 }
 
 .filtres {
-  position: fixed;
+  position: sticky;
   top: 105px; /* ajustez selon la hauteur de votre en-tête */
   z-index: 99;
   background-color: #141414;
@@ -112,8 +112,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
-  padding: 20px;
-  padding-top: 70px;
+  padding: 20px; 
 }
 
 @media (max-width: 768px) {
