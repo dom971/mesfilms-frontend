@@ -1,0 +1,26 @@
+<div class="auth-container">
+  <div class="auth-box">
+    <h1>🎬 Mes Films</h1>
+    <h2>Connexion</h2>
+
+    @if (erreur) {
+      <p class="erreur">{{ erreur }}</p>
+    }
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Email"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Mot de passe"
+    />
+
+    <button (click)="login()">Se connecter</button>
+
+    <p class="lien">Pas encore de compte ? <a routerLink="/register">S'inscrire</a></p>
+  </div>
+</div>
